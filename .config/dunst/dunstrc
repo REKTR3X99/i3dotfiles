@@ -1,0 +1,42 @@
+[global]
+
+font = hack-regular 12
+
+sorty = yes
+
+allignment = center
+
+show_age_threshold = 60
+
+word_wrap = yes
+
+geometry = "270x20-10+33"
+
+padding = 10
+
+seperator_color = auto
+
+browser = /usr/bin/firefox -new-tab
+
+
+[fram] 
+width = 1
+color = "#ffffff"
+
+
+[urgency_low]
+background = "#42f489"
+foreground = "#ffffff"
+timeout = 10
+
+[urgency_normal]
+background = "#4295f4"
+foreground = "#ffffff"
+timeout = 10
+
+[urgency_critical]
+background = "#d92036"
+foreground = "#ffffff"
+timeout = 10
+
+
