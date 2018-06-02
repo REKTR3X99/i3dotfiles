@@ -1,5 +1,5 @@
 [global/wm]
-margin-top = 0
+margin-top = 10
 margin-bottom = 0
 
 [colors]
@@ -21,21 +21,21 @@ locale = en_US.UTF-8
 
 enable-ipc = true
 
-padding-left = 1
-padding-right = 1
-padding-top = 2
+padding-left = 0
+padding-right = 0
+padding-top = 0
 
 module-margin-left = 0
 module-margin-right = 0
 
-modules-right = volume eth xbacklight filesystem cpu memory  
+modules-right = volume eth filesystem cpu memory  
 modules-center = date
-modules-left = bspwm
+modules-left = i3 
 
-background = #01371056
-foreground = #ffeeeeee
+background = #00282726
+foreground = #eeeeee
 
-underline-size = 2
+underline-size = 3
 underline-color = ${colors.foreground}
 
 tray-detached = false
@@ -47,11 +47,11 @@ tray-offset-y = 0
 tray-transparent = true
 tray-scale = 1.0
 
-font-0 = "hack bold:size=11"
-font-1 = "hack bold:size=11"
+font-0 = "hack bold:size=13"
+font-1 = "hack bold:size=13"
 
-[module/bspwm]
-type = internal/bspwm
+[module/i3]
+type = internal/i3
 enable-scroll = false
 wrapping-scroll = true 
 label-focused = %index%
@@ -69,7 +69,7 @@ label-urgent-padding = 2
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 3
 
 [module/eth]
 type = internal/network
@@ -85,8 +85,8 @@ format-disconnected =
 
 [module/wlan]
 type = internal/network
-interface = enp0s3
-interval = 0.0
+interface = enp3s0
+interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
@@ -147,7 +147,7 @@ interval = 5
 label = %date% %time%
 format-padding = 1
 
-[module/pulseaudio]
+[module/volume]
 type = internal/pulseaudio
 
 sink = alsa_output.pci-0000_09_00.3.analog-stereo
@@ -161,12 +161,11 @@ format-muted-prefix = ". "
 format-muted-foreground = #66
 label-muted =  🔇 muted
 
-ramp-volume-0 = 
-ramp-volume-1 = .
-ramp-volume-2 = ..
+ramp-volume-0 = 🔉 
+ramp-volume-1 = 🔊
 
 
-ramp-volume-foreground = #666
+ramp-volume-foreground = #666666
 
 format-muted-padding = 1
 format-volume-padding = 1
