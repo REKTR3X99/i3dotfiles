@@ -1,14 +1,20 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+;background = #222
+background = #00000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #808080
+;foreground = #808080
+foreground = #ffffff
 foreground-alt = #555
-primary =  #456771
-secondary = #09404d
+;primary =  #456771
+primary = #aaaaaa
+;secondary = #09404d
+secondary = #ff443b
 alert = #bd2c40
+walcolor = #ff443b
+
 
 [bar/bar]
 ;monitor = ${env:MONITOR:}
@@ -34,12 +40,12 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = mono:pixelsize=11;1
-font-1 = FontAwesome:pixelsize=11;1
-font-2 = siji:pixelsize=10;1
+font-1 = FontAwesome:pixelsize=11;
+font-2 = siji:pixelsize=10;
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume memory cpu temperature time kernel-version
+modules-right = volume memory cpu eth kernel-version date
 
 tray-position = right
 tray-padding = 2
@@ -54,8 +60,8 @@ tray-padding = 2
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 [module/xwindow]
 type = internal/xwindow
@@ -122,7 +128,8 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+;label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-underline = #cc9916
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -180,16 +187,17 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =  #456771
-label = %percentage%%
+format-underline =  ${colors.walcolor}
+label = CPU : %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =  #456771
-label = %percentage_used%%
+;format-underline =  #456771
+format-underline = ${colors.walcolor}
+label = MEM : %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -197,7 +205,7 @@ interface = enp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline =  #456771
+format-connected-underline =  ${colors.walcolor}
 label-connected = %essid%
 
 format-disconnected =
@@ -218,7 +226,7 @@ type = internal/network
 interface = enp3s0
 interval = 3.0
 
-format-connected-underline =  #456771
+format-connected-underline =  ${colors.walcolor}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -233,15 +241,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+;date =
+date = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =  #456771
+format-underline =   ${colors.walcolor}
 
 label = %date% %time%
 
@@ -371,7 +379,7 @@ screenchange-reload = true
 type = custom/script
 exec = uname -r
 interval = 1024
-format-underline =  #456771
+format-underline =   ${colors.walcolor}
 format-prefix = " "
 format-prefix-foreground = #666
 
