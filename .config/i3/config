@@ -142,16 +142,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 1 px or 1 ppt
+        bindsym k resize grow height 1 px or 1 ppt
+        bindsym l resize shrink height 1 px or 1 ppt
+        bindsym semicolon resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 2 px or 2 ppt
-        bindsym Down resize grow height  2 px or 2 ppt
-        bindsym Up resize shrink height  2 px or 2 ppt
-        bindsym Right resize grow width  2 px or 2 ppt
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height  1 px or 1 ppt
+        bindsym Up resize shrink height  1 px or 1 ppt
+        bindsym Right resize grow width  1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -170,7 +170,7 @@ bindsym $mod+r mode "resize"
 #AudioKeyBind
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%; exec sh ~/.config/scripts/volume_notif.sh
 bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%; exec sh ~/.config/scripts/volume_notif.sh
-bindsym XF86AudioPlay exec pactl -- set-sink-mute 0 toggle; exec sh ~/.config/scripts/volume_notif.sh
+bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle; exec sh ~/.config/scripts/volume_notif.sh
 
 #Brightness bindings
 bindsym $mod+Prior exec sh ~/.config/scripts/brightnesshigher.sh
@@ -178,7 +178,7 @@ bindsym $mod+Next exec sh ~/.config/scripts/brightnesslower.sh
 
 
 #scrot
-bindsym Print exec scrot ~/Pictures/'Screenshot %d%m%y'.png
+bindsym Print exec scrot ~/Pictures/'Screenshot %y:%m:%d:%H:%m:%s'.png
 
 #no foucs follow
 focus_follows_mouse no
@@ -186,11 +186,22 @@ focus_follows_mouse no
 new_window 1pixel
 #gaps
 gaps outer 5
-gaps inner 10
+gaps inner 15
 
+#firefox
+bindsym $mod+b exec firefox
 
+#polybar relaunch
+bindsym $mod+p exec polybar bar & 
+#bindym $mod+Shift+p exec pkill polybar
+ 
+#i3lock
+#bindsym $mod+l exec i3lock -B=20 --clock --ringcolor=f3ebd4ff --keyhlcolor=002766ff -verifcolor=8fabdbff
+
+bindsym $mod+l exec betterlockscreen -l dimblur
 
 exec compton &
-exec feh --bg-scale ~/Pictures/wallpaper/Mountain_blue.jpg & 
-exec polybar bar &
-#exec wal -i ~/Pictures/wallpaper/Mountain_blue.jpg
+exec feh --bg-scale ~/Pictures/wallpaper/minimal_mountains.jpg & 
+exec dunst --no-startup-id &
+exec wal -i ~/Pictures/wallpaper/Winter.png -b 202121 &
+exec polybar bar & disown
