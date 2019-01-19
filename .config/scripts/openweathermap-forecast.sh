@@ -24,8 +24,8 @@ get_icon() {
     echo $icon
 }
 
-KEY="e3ac8f5ff86f247182e00af7f120f895"
-CITY="6619347"
+KEY="<Enter-Your-Key>"
+CITY="<Enter-Your-City-Code>"
 UNITS="metric"
 SYMBOL="°"
 

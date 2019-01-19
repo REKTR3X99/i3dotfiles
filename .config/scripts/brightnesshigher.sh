@@ -1,4 +1,4 @@
-brightness=$(xrandr --verbose | grep -i brightness | sed "s/[^0-9^.]//g")
+brightness=$(xrandr --verbose | awk '/Brightness/{print $2}')
 factor=0.1
 upperlimit=1.0
 newbrightness=$(echo "$brightness+$factor" | bc)

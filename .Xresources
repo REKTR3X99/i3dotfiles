@@ -1,74 +1,71 @@
-!URxvt.font: xft:Source Code Pro:Size = 14
-URxvt.font : xft:Hack-Regular:Size =  14
+!URxvt.font: xft:Source Code Pro:size=13
+!URxvt.font : xft:Hack-Regular:Size =  14
+!URxvt*font : xft:monospace:Regular:size=13
+URxvt.font:xft:Inconsolata-Regular:size=15
+
+
 URxvt.dpi : 96
 URxvt.scrollBar : false
-!URxvt.scrollBar_floating : true
+URxvt.scrollBar_floating : true
+URxvt.scrollBar_right : true
+URxvt.scrollColor : #3f3f3f
+URxvt.cursorUnderline : true
 
 URxvt.tintColor : #ffffff
 URxvt.transparent : true
-URxvt.blur : 100
-URxvt.blurRadius : 20
+URxvt.blur : 67
+URxvt.blurRadius : 7
 URxvt.depth : 16
-URxvt.shading : 60
+URxvt.shading : 50
 URxvt.saveLines : 100000
 URxvt.highlightColor : rgb:FF/FF/FF
 
 URxvt.cursorBlink : true
 URxvt.fading : 1.0
 URxvt.urlLauncher : firefox
-URxvt.externalBorder : 1
+URxvt.externalBorder : 0
 
-URxvt.BorderColor : rgb:AA/AA/AA
+!URxvt.BorderColor : rgb:AA/AA/AA
 !URxvt.cursorColor : rgb:ff/ff/ff
-URxvt.cursorUnderLine : true
-
-!URxvt.scrollBar_right : true
-URxvt.scrollColor : #3f3f3f
-
-URxvt.cursorUnderline : true
-
-
-
-xterm*faceName: xft:Hack-Regular
-xterm*faceSize: 10
-xterm*background: Black
-xterm*foreground: White
-
 
 
 *.foreground:   #ffffff
-*.background:   #131010
+*.background:   #441F0E
 *.cursorColor:  #cbc5c4
 
 ! black
- *.color0:       #1f1b1a
- *.color8:       #87dea4
+ *.color0:       #282828
+ *.color8:       #ffffff
 !
 ! ! red
- *.color1:       #282323
- *.color9:       #74cfd5
+ *.color1:       #cc241d
+ *.color9:       #fb4934
 !
 ! ! green
- *.color2:       #127c00
- *.color10:      #67c4ca
+ *.color2:       #98971a
+ *.color10:      #b8bb26
 !
 ! ! yellow
- *.color3:       #f44242
- *.color11:      #ddd38c
+ *.color3:       #d79921
+ *.color11:      #fabd2f
 !
 ! ! blue
- *.color4:       #736765
- *.color12:      #4ec37b
+ *.color4:       #458588
+ *.color12:      #83a598
 !
 ! ! magenta
- *.color5:       #998987
- *.color13:      #79dbe2
+ *.color5:       #b16286
+ *.color13:      #d3869b
 !
 ! ! cyan
- *.color6:       #bbb3b2
- *.color14:      #c6bb5a
+ *.color6:       #689d6a
+ *.color14:      #8ec07c
 !
 ! ! white
- *.color7:       #e4e2e1
- *.color15:      #c3b85a
+ *.color7:       #ddeedd
+ *.color15:      #ebdbb2
 
+
+!Copy and Paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard 
