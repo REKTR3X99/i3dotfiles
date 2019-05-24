@@ -29,7 +29,4 @@ cp -r $home/.config/rofi $home/Desktop/i3dotfiles/.config/
 #Copy scripts
 cp -r $home/.config/scripts $home/Desktop/i3dotfiles/.config/
 
-#Copy vim config
-cp -r $home/.vim $home/Desktop/i3dotfiles/.config/
-
 rm  -rf $home/Desktop/i3dotfiles/.config/scripts/weather-icons
