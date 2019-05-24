@@ -64,6 +64,7 @@ configuration {
     border-color: 			@separatorcolor;
     spacing:      			10px;
     padding: 				10 1% 10;
+    
 }
 
 #element {

@@ -24,8 +24,8 @@ get_icon() {
     echo $icon
 }
 
-KEY="<Enter-Your-Key>"
-CITY="<Enter-Your-City-Code>"
+KEY="4b205f43acf4015aee44b3f1bb94cd7a"
+CITY="6619347"
 UNITS="metric"
 SYMBOL="°"
 
@@ -67,5 +67,6 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
         trend=""
     fi
 
-    echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
+    echo "$(get_icon "$current_icon") $current_temp$SYMBOL"
+    #$trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
 fi

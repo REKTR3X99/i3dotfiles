@@ -38,11 +38,6 @@ bindsym $mod+w kill
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show run -no-cycle
-#bindsym $mod+space exec dmenu
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+Shift+a focus left
@@ -67,10 +62,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+v split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+h split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -89,8 +84,8 @@ bindsym $mod+Shift+t focus mode_toggle
 # focus the parent container
 bindsym $mod+Shift+f focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
+# Restart dunst
+bindsym $mod+d exec ~/.config/scripts/dunst.sh
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -174,7 +169,9 @@ for_window [class="^.*"] border pixel 0
 
 #AudioKeyBind
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%; exec sh ~/.config/scripts/volume_notif.sh
+
 bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%; exec sh ~/.config/scripts/volume_notif.sh
+
 bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle; exec sh ~/.config/scripts/volume_notif.sh
 
 #Brightness bindings
@@ -186,20 +183,19 @@ bindsym Print exec scrot ~/Pictures/'Screenshot %y:%m:%d:%H:%m:%s'.png
 
 #no foucs follow
 focus_follows_mouse no
-#1px border window
-new_window 1pixel
+
 #gaps
-gaps outer 5
-gaps inner 10
+gaps outer 1
+gaps inner 6
 
 #firefox
-bindsym $mod+b exec firefox
+bindsym $mod+b exec chromium
 
 #polybar relaunch
 bindsym $mod+p exec ~/.config/polybar/launch.sh & 
  
 #lock
-bindsym $mod+l exec betterlockscreen -l dimblur
+bindsym $mod+l exec ~/.config/scripts/lock.sh
 
 #nnn
 bindsym $mod+shift+n exec $term -e nnn
@@ -208,6 +204,6 @@ bindsym $mod+shift+n exec $term -e nnn
 bindsym $mod+shift+h exec spotify
 
 exec compton &
-exec feh --bg-scale ~/Pictures/wallpaper/arch-linux-solarized.png & 
-exec dunst &
+exec feh --bg-scale ~/Pictures/wallpaper/mountain_violet.jpg & 
+exec ~/.config/scipts/dunst.sh &
 exec_always ~/.config/polybar/launch.sh &
