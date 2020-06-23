@@ -6,27 +6,27 @@ fi
 home=/home/ajay
 
 #Copy .Xresources
-cp $home/.Xresources $home/Desktop/i3dotfiles/
+cp $HOME/.Xresources $HOME/Desktop/i3dotfiles/
 
 #Copy wallpapers
-cp -r $home/Pictures/wallpaper $home/Desktop/i3dotfiles/
+cp -r $HOME/Pictures/wallpaper $HOME/Desktop/i3dotfiles/
 
 #Copy Compton config 
-cp $home/.config/compton.conf $home/Desktop/i3dotfiles/.config/
+cp $HOME/.config/compton.conf $HOME/Desktop/i3dotfiles/.config/
 
 #Copy dunst config
-cp $home/.config/dunst/dunstrc $home/Desktop/i3dotfiles/.config/dunst
+cp $HOME/.config/dunst/dunstrc $HOME/Desktop/i3dotfiles/.config/dunst
 
 #Copy i3 config
-cp $home/.config/i3/config $home/Desktop/i3dotfiles/.config/i3/
+cp $HOME/.config/i3/config $HOME/Desktop/i3dotfiles/.config/i3/
 
 #Copy polybar config
-cp -r $home/.config/polybar $home/Desktop/i3dotfiles/.config/
+cp -r $HOME/.config/polybar $HOME/Desktop/i3dotfiles/.config/
 
 #Copy Rofi config
-cp -r $home/.config/rofi $home/Desktop/i3dotfiles/.config/
+cp -r $HOME/.config/rofi $HOME/Desktop/i3dotfiles/.config/
 
 #Copy scripts
-cp -r $home/.config/scripts $home/Desktop/i3dotfiles/.config/
+cp -r $HOME/.config/scripts $HOME/Desktop/i3dotfiles/.config/
 
-rm  -rf $home/Desktop/i3dotfiles/.config/scripts/weather-icons
+rm  -rf $HOME/Desktop/i3dotfiles/.config/scripts/weather-icons
