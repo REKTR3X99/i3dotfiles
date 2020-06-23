@@ -1,3 +1,3 @@
-updates=$(checkupdates | awk '{print $1}' | wc -l)
+updates=$(checkupdates | wc -l)
 
 echo "U:$updates"

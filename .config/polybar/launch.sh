@@ -4,7 +4,9 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar bar & disown 
+polybar primary & disown 
+sleep 0.05s
+polybar dual & disown
 
 
 

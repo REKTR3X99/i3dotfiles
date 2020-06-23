@@ -1,90 +1,85 @@
-URxvt.font: xft:Source Code Pro:size=14
+!URxvt.font: xft:Source Code Pro:size=14
 !URxvt.font : xft:Hack-Regular:Size =  14
 !URxvt*font : xft:monospace:Regular:size=13
 !URxvt.font:xft:inconsolata-regular:size=15
+URxvt.font:xft:anka/coder-regular:size=14
+!URxvt*depth: 32
 
 URxvt.dpi : 96
 URxvt.scrollBar : false
-URxvt.scrollBar_floating : true
-URxvt.scrollBar_right : true
-URxvt.scrollColor : #3f3f3f
+!URxvt.scrollBar_floating : true
+!URxvt.scrollBar_right : true
+!URxvt.scrollColor : #3f3f3f
 URxvt.cursorUnderline : true
 
 !URxvt.tintColor : #ffffff
 !URxvt.transparent : true
 !URxvt.blur : 50
-!URxvt.blurRadius : 7
-!URxvt.depth : 16
-!URxvt.shading : 3
-URxvt.saveLines : 100000
+!URxvt.blurRadius : 10
+!URxvt.depth : 24
+!URxvt.shading : 40
+URxvt.saveLines : 1000
 URxvt.highlightColor : rgb:FF/69/B4
 
 URxvt.cursorBlink : true
-URxvt.fading : 1.0
-URxvt.urlLauncher : chromium
-URxvt.externalBorder : 1
+!URxvt.fading : 1.0
+!URxvt.externalBorder : 1
+URxvt.internalBorder: 48
+URxvt.iso14755: false
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
 
 !URxvt.BorderColor : rgb:AA/AA/AA
 !URxvt.cursorColor : rgb:ff/ff/ff
 
-! special
-*.foreground:   #ffffff
-*.background:   #1d1f21
-*.cursorColor:  #8c9440
-
-! black
-*.color0:       #282a2e
-*.color8:       #373b41
-
-! red
-*.color1:       #a54242
-*.color9:       #cc6666
-
-! green
-*.color2:       #8c9440
-*.color10:      #b5bd68
-
-! yellow
-*.color3:       #de935f
-*.color11:      #f0c674
-
-! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
-
-! magenta
-*.color5:       #85678f
-*.color13:      #b294bb
-
-! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
-
-! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+! DRACULA
+!*foreground:    #F8F8F2
+*background:    #282A36
+!*color0:        #44475a
+!*color8:        #6272a4
+!*color1:        #FF5555
+!*color9:        #FF6E67
+!*color2:        #50FA7B
+!*color10:       #5AF78E
+!*color3:        #F1FA8C
+!*color11:       #F4F99D
+!*color4:        #BD93F9
+!*color12:       #CAA9FA
+!*color5:        #FF79C6
+!*color13:       #FF92D0
+!*color6:        #8BE9FD
+!*color14:       #9AEDFE
+!*color7:        #BFBFBF
+!*color15:       #F8F8F2
 
 
-!*.color1:#090D17
-!*.color2:#5B6983
-!*.color3:#6A738A
-!*.color4:#95788B
-!*.color5:#C77B89
-!*.color6:#9D8B9C
-!*.color7:#939CAD
-!*.color8:#c1c8d1
-!*.color9:#878c92
-!*.color10:#5B6983
-!*.color11:#6A738A
-!*.color12:#95788B
-!*.color13:#C77B89
-!*.color14:#9D8B9C
-!*.color15:#939CAD
-!*.color16:#c1c8d1
+
+! Lovelace
+!*background:	#1D1F28
+*foreground:	#FDFDFD
+*cursorColor:	#C574DD
+*color0:	#282A36
+*color1:	#F37F97
+*color2:	#5ADECD
+*color3:	#F2A272
+*color4:	#8897F4
+*color5:	#C574DD
+*color6:	#79E6F3
+*color7:	#FDFDFD
+*color8:	#414458
+*color9:	#FF4971
+*color10:	#18E3C8
+*color11:	#FF8037
+*color12:	#556FFF
+*color13:	#B043D1
+*color14:	#3FDCEE
+*color15:	#BEBEC1
+
+
 
 !Font resize on fly : install urxvt-resize-font-git and urxvt-fullscreen from AUR
-URxvt.perl-ext-common:  ...,resize-font,... ...,clipboard,...
-URxvt.keysym.F11: perl:fullscreen:switch
+!URxvt.perl-ext-common:  ...,resize-font,... ...,clipboard,...
+!URxvt.keysym.F11: perl:fullscreen:switch
 
 URxvt.clipboard.autocopy  : true
 URxvt.keysym.ctrl-alt-c : perl:clipboard:copy
