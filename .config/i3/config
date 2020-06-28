@@ -11,6 +11,9 @@
 
 set $mod Mod4
 set $term st
+set $sink 1
+
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Iosevka 0
@@ -40,7 +43,8 @@ bindsym $mod+Return exec --no-startup-id $term
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec rofi -show drun -theme slate
+#bindsym $mod+space exec rofi -show drun -theme slate
+bindsym $mod+space exec dmenu_run
 
 # change focus
 bindsym $mod+Left focus left
@@ -218,25 +222,24 @@ bindsym $mod+r mode "resize"
 #}
 
 #no borders
-for_window [class ="^.*"] border pixel 0
-for_window [title ="^.*"] border pixel 0 
-
-smart_borders on
+for_window [class ="^.*"] border pixel 3
+for_window [title ="^.*"] border pixel 3 
 
 
 #AudioKeyBind
-bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 1 -5%; exec sh ~/.config/scripts/volume_notif.sh
 
-bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 1 +5%; exec sh ~/.config/scripts/volume_notif.sh
+bindsym XF86AudioRaiseVolume exec ~/.config/scripts/volumecontrol.sh $sink 1 
 
-bindsym XF86AudioMute exec pactl -- set-sink-mute 1 toggle; exec sh ~/.config/scripts/volume_notif.sh
+bindsym XF86AudioLowerVolume exec ~/.config/scripts/volumecontrol.sh $sink 2
+
+bindsym XF86AudioMute exec ~/.config/scripts/volumecontrol.sh $sink 3
 
 #Brightness bindings
-bindsym $mod+Prior exec sh ~/.config/scripts/brightnesshigher.sh
-bindsym $mod+Next exec sh ~/.config/scripts/brightnesslower.sh
+bindsym $mod+Prior exec ~/.config/scripts/brightnesshigher.sh
+bindsym $mod+Next exec ~/.config/scripts/brightnesslower.sh
 
-#scrot
-bindsym Print exec maim -s ~/Pictures/'Screenshot '$(date +%s).png
+#maim screenshot
+bindsym Print exec ~/.config/scripts/maim.sh
 
 
 
@@ -244,8 +247,8 @@ bindsym Print exec maim -s ~/Pictures/'Screenshot '$(date +%s).png
 focus_follows_mouse no
 
 #gaps
-gaps outer 10
-gaps inner 10
+gaps outer 5
+gaps inner 5
 
 
 #for_window[class="Alacritty"] floating enable
@@ -268,5 +271,5 @@ bindsym $mod+shift+h exec spotify
 
 #exec_always feh --bg-scale ~/Pictures/wallpaper/Arch_Dark.png --no-startup-id 
 #exec_always ~/.config/scripts/dunst.sh --no-startup-id 
-#exec_always ~/.config/polybar/launch.sh --no-startup-id 
+exec_always --no-startup-id ~/.config/polybar/launch.sh 
 #exec_always ~/.config/scripts/xrandrconfig.sh --no-startup-id
